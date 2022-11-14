@@ -2,6 +2,7 @@ import { Form, Field, FormElement } from '@progress/kendo-react-form';
 import { Input } from '@progress/kendo-react-inputs';
 import { Checkbox } from '@progress/kendo-react-inputs';
 import { Link } from 'react-router-dom';
+import { Button } from '@progress/kendo-react-buttons';
 
 export const SignUp = () => {
    return (
@@ -52,9 +53,11 @@ maxWidth: 650
      <Checkbox label={'I agree to the Terms of Services and Privacy Policy'} />
        </div>
        <div className="k-form-buttons">
-       <button type={'submit'} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        Create Free Account 
-       </button>
+       <Link to="/home" className="dashboard-button">
+       <Button type={'submit'} className="sign-button">
+         Create Free Account 
+        </Button>
+        </Link>
      </div>
        </fieldset>
 

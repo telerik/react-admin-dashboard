@@ -2,6 +2,7 @@ import { Form, Field, FormElement } from '@progress/kendo-react-form';
 import { Input } from '@progress/kendo-react-inputs';
 import { Checkbox } from '@progress/kendo-react-inputs';
 import { Link } from 'react-router-dom';
+import { Button } from '@progress/kendo-react-buttons';
 
 export const SignIn = () => {
    return (
@@ -39,9 +40,11 @@ maxWidth: 650
        </fieldset>
 
      <div className="k-form-buttons">
-       <button type={'submit'} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
+       <Link to="/home" className="dashboard-button">
+       <Button type={'submit'} className="sign-button">
          Sign In
-       </button>
+        </Button>
+        </Link>
      </div>
    </FormElement>} />
          

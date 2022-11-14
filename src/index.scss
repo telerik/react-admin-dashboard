@@ -260,11 +260,6 @@ div.k-form-field:nth-child(3) {
   height: 100%;
 }
 
-.drawer-container-wrapper {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
 .overview {
  color: #2D73F5;
  margin-left: 16px;
@@ -303,4 +298,57 @@ div.k-form-field:nth-child(3) {
 
 .popup-content {
   margin-top: 10px;
+}
+
+.mark-button {
+  height: 30px;
+  width: 165px;
+  float: right;
+  border: solid 1px #FF6358;
+  color: #FF6358;
+  background-color: white;
+  right: 10px;
+}
+
+.message-container:nth-child(1) {
+  background-color: lightyellow;
+}
+
+.k-drawer-content {
+  margin-left: 15px;
+}
+
+.user-container {
+  width: 230px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+   img {
+    height: 64px;
+    width: 64px;
+   }
+
+   h1 {
+    font-size: 14px;
+    margin-top: 13px;
+    color: #424242;
+   }
+
+   .user-email {
+    font-size: 12px;
+    margin-top: 12px;
+    text-decoration: underline;
+   }
+
+   .user-button {
+    font-size: 12px;
+    height: 30px;
+    width: 70px;
+    margin-top: 11px;
+   
+   }
+}
+
+.hidden {
+  display: none;
 }

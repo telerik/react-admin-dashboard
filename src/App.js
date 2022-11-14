@@ -3,16 +3,22 @@ import { Routes, Route } from 'react-router-dom';
 import { SignIn } from './pages/SignIn.jsx';
 import { SignUp } from './pages/SignUp.jsx';
 import { Home } from './pages/Home.jsx'
-
+import { Dashboard } from './pages/Dashboard.jsx'
 const App = () => {
    
     return ( 
         <div className="App">
+
             <Routes>
+               
                <Route path="/" element={<SignIn/>}/>
                <Route path="/signup" element={<SignUp/>}/>
-               <Route path="/home" element={<Home/>}/>
+               <Route path="/home" element={<Home/>}>
+               <Route path="/home/dashboard" element={<Dashboard/>}/>
+
+                </Route>
             </Routes>
+
         </div>
     );
 }

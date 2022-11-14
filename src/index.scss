@@ -71,6 +71,7 @@ hr {
   width:75px;
   height:0px;
   border: 1px solid #8F8F8F;
+  margin-top: 9px;
 }
 
 .sign-in-page {
@@ -120,6 +121,10 @@ div.k-form-field:nth-child(3) {
 
 .sign-button:hover  {
   background:#FF6358;
+}
+
+.k-button-text {
+  text-decoration: none;
 }
 
 .social-wrapper {

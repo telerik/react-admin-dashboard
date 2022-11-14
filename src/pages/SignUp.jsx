@@ -17,7 +17,7 @@ export const SignUp = () => {
              Sign In
          </div>
          <div className="account">
-         Already have an account?  <Link to="/">Sign In</Link>
+         Already have an account?  <Link style={{ textDecoration: 'none' }} to="/">Sign In</Link>
          </div>
      </div>
      <div className="inputs-wrapper">

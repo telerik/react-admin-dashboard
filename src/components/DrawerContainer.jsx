@@ -17,11 +17,9 @@ export const DrawerContainer = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [expanded, setExpanded] = React.useState(true);
-  const [toggle, setToggled] = React.useState(true)
 
   const handleClick = () => {
     setExpanded(!expanded);
-    setToggled(!toggle)
   };
 
   const onSelect = (e) => {
@@ -51,20 +49,18 @@ export const DrawerContainer = (props) => {
              About
          </a>
         </div>
-        
       </div>
-      <div className={toggle ? 'user-container': 'hidden'} > 
 
-    <img src={require('../assets/people/user-avatar.jpg')} alt="user avatar"/> 
+     <div>
 
+     <div className='user-container' > 
+        <img src={require('../assets/people/user-avatar.jpg')} alt="user avatar"/> 
        <h1>Jaxons Danniels</h1> 
        <div className="user-email">jaxons.daniels@company.com</div> 
        <Link to="/"  style={{ textDecoration: 'none' }}>
        <Button className="user-button" >Sign Out</Button> 
        </Link>
-     </div>
-     
-   
+      </div>
       <Drawer
         expanded={expanded}
         position={'start'}
@@ -79,6 +75,8 @@ export const DrawerContainer = (props) => {
       >
         <DrawerContent>{props.children}<Outlet/> </DrawerContent>
       </Drawer>
+     </div>
+ 
     </div>
 
   );

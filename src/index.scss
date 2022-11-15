@@ -419,3 +419,62 @@ my-app { padding: 0 !important; }
     padding-top: 0px;
   }
 }
+
+.greeting {
+  font-weight: 300;
+  font-size: 28px;
+  padding: 24px 0px 8px 17px;
+  background: #fafafa;
+}
+
+.dashboard-card-content-number {
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 84px;
+line-height: 80px;
+text-align: center;
+
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.green {
+  color: #37B400;
+}
+
+.red {
+  color: #F31700;
+}
+
+.orange {
+  color: #FFC000;
+}
+
+.footer, .k-card-title 
+  {
+  color: #666666;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.k-card-header {
+  border-color: transparent;
+}
+
+.gauge-div {
+  margin-top: -60px;
+  text-align: center;
+}
+
+.gauge-footer {
+  color: #666666;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 42px;
+}

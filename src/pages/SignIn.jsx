@@ -40,7 +40,7 @@ maxWidth: 650
        </fieldset>
 
      <div className="k-form-buttons">
-       <Link to="/home" className="dashboard-button" style={{ textDecoration: 'none' }}>
+       <Link to="/home/dashboard" className="dashboard-button" style={{ textDecoration: 'none' }}>
        <Button type={'submit'} className="sign-button">
          Sign In
         </Button>

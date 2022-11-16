@@ -53,7 +53,7 @@ maxWidth: 650
      <Checkbox label={'I agree to the Terms of Services and Privacy Policy'} />
        </div>
        <div className="k-form-buttons">
-       <Link to="/home" className="dashboard-button">
+       <Link to="/home/dashboard" className="dashboard-button">
        <Button type={'submit'} className="sign-button">
          Create Free Account 
         </Button>

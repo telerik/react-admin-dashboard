@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { TileLayout } from '@progress/kendo-react-layout';
 import { ArcGauge } from '@progress/kendo-react-gauges';
-
+import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
+import { DateRangePicker } from '@progress/kendo-react-dateinputs';
+import { Chart, ChartSeries, ChartSeriesItem, ChartCategoryAxisItem, ChartCategoryAxis, ChartLegend} from '@progress/kendo-react-charts';
+import { trendSeries } from '../data/trendSeries.js';
+import { volumeSeries } from '../data/volumeSeries.js';
 
 const colors = [
   {
@@ -102,14 +106,93 @@ const tiles = [
 ];
 
 export  const Dashboard = () => {
+  const [chartSeries, setChartSeries] = React.useState(trendSeries);
+  const [isTrend, setIsTrend] = React.useState(true);
+
+  const categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+
+
+  const [range, setRange] = React.useState({
+    start: new Date('2020-01-01T21:00:00.000Z'),
+    end: new Date('2020-04-29T21:00:00.000Z')
+});
+  
+
+
+const trendOnClick = React.useCallback(
+  () => {
+      setIsTrend(true);
+      setChartSeries(trendSeries)
+
+  },
+  [setIsTrend]
+);
+
+const volumeOnClick = React.useCallback(
+  () => {
+      setIsTrend(!true);
+      setChartSeries(volumeSeries)
+  },
+  [setIsTrend]
+);
+
+const onRangeChange = React.useCallback(
+  (event) => {
+      setRange({
+          start: event.value.start,
+          end: event.value.end
+      })
+  },
+  [setRange]
+);
+
   return (
     <div>
       <div className="greeting">
       Hello again, Jaxons!
     </div>
+    <div className="card-container grid">
+
     <div className="cards-layout-container">
     <TileLayout columns={4} items={tiles} rowHeight={230} />
+    <div className="chart-container">
 
+   <div className="k-card">
+    
+   <div className="card-buttons">
+   <p>Total Points</p>
+      <div>
+      <DateRangePicker  value={range} onChange={onRangeChange}/>
+
+      </div>
+   <div className="card-ranges">
+                </div>
+      <ButtonGroup>
+      <Button togglable={true} selected={isTrend} onClick={trendOnClick}>
+            Trend
+          </Button>
+          <Button togglable={true} selected={!isTrend} onClick={volumeOnClick}>
+            Volume
+          </Button>
+      </ButtonGroup>
+   </div>
+   <Chart style={{
+          height: 350
+        }}>
+            <ChartLegend position="bottom" orientation="horizontal" />
+            <ChartCategoryAxis>
+              <ChartCategoryAxisItem categories={categories}  />
+            </ChartCategoryAxis>
+            <ChartSeries>
+              {chartSeries.map((item, idx) => <ChartSeriesItem key={idx} type="line" tooltip={{
+              visible: true
+            }} data={item.data} name={item.name} />)}
+            </ChartSeries>
+          </Chart>
+          </div>
+    </div>
+    </div>
     </div>
     </div>
   );

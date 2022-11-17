@@ -1,8 +1,7 @@
 @import "./styles/typography.scss";
 
-body {
-  margin: 0;
-}
+// html,body{overflow: scroll; }
+
 
 span.k-textbox {
   width: 100%;
@@ -375,7 +374,6 @@ a {
 my-app { padding: 0 !important; }
 
 .k-drawer-container {
-    position: fixed;
     width: 100%;
     height: 100%;
 }
@@ -518,3 +516,20 @@ text-align: center;
   margin-left: 13px;
   margin-right: 13px;
 }
+
+.k-rating-item.k-selected {
+  color: #FFA600;
+}  
+
+.person-name {
+  margin-left: 10px;
+}
+
+.grid-container {
+  margin-top: 50px;
+  height: 500px;
+  .export-buttons-container {
+    margin-left: 10px;
+  }
+}
+

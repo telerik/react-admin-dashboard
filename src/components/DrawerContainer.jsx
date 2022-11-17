@@ -45,9 +45,8 @@ export const DrawerContainer = (props) => {
           <div className="alert-container">
           <Alert/>
           </div>
-        <a href="#" >
-             About
-         </a>
+          <Link to="/home/about" style={{color: '#424242'}}>About</Link>             
+
         </div>
       </div>
 
@@ -58,7 +57,9 @@ export const DrawerContainer = (props) => {
        <h1>Jaxons Danniels</h1> 
        <div className="user-email">jaxons.daniels@company.com</div> 
        <Link to="/"  style={{ textDecoration: 'none' }}>
-       <Button className="user-button" >Sign Out</Button> 
+       <Button className="user-button" style={{
+          backgroundColor: 'white'
+       }}>Sign Out</Button> 
        </Link>
       </div>
       <Drawer

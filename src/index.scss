@@ -411,10 +411,6 @@ my-app { padding: 0 !important; }
   height: 40px;
 }
 
-.k-widget {
-  padding-top: 30px;
-
-}
 
 .k-notification-container {
   .k-widget {
@@ -533,3 +529,31 @@ text-align: center;
   }
 }
 
+.circular-gauge-container {
+  display: flex;
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.progress-bar-container {
+  display: flex;
+}
+
+.value-span {
+  margin-top: -7px;
+  margin-left: 21.25px;
+}
+
+.country-name-container {
+  margin-top: -7px;
+  margin-right: 11px;
+}
+
+.country-name {
+  font-size: 12px;
+  width: 250px;
+}

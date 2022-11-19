@@ -331,11 +331,15 @@ export  const Dashboard = () => {
 
   const CustomBudgetCell = props => <BudgetCell {...props} myProp={customData} />;
 
-  let _export;
+  let _pdfExport;
   const exportExcel = () => {
     _export.save();
   };
+  let _export;
 
+  const exportPDF = () => {
+    _pdfExport.save();
+  };
 
   return (
     <div>
@@ -356,8 +360,7 @@ export  const Dashboard = () => {
       <DateRangePicker  value={range} onChange={onRangeChange}/>
 
       </div>
-   <div className="card-ranges">
-                </div>
+
       <ButtonGroup>
       <Button togglable={true} selected={isTrend} onClick={trendOnClick}>
             Trend
@@ -409,7 +412,9 @@ export  const Dashboard = () => {
     onSelectionChange={onSelectionChange}
     onHeaderSelectionChange={onHeaderSelectionChange}
   >
+  
     <GridToolbar className="toolbar">
+    
       <div>
         <span>
           <Input
@@ -425,11 +430,11 @@ export  const Dashboard = () => {
         </span>
         <div className="export-buttons-container">
         <button title="Export to Excel" className="k-grid-excel k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={exportExcel}>
-         Export to Excel
+        <span class="k-icon k-i-file-excel k-button-icon"></span> Export to Excel
        </button>&nbsp;
 
-      <button className="k-grid-pdf k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-       Export to PDF
+      <button className="k-grid-pdf k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={exportPDF}>
+      <span class="k-icon k-i-file-pdf k-button-icon"></span>  Export to PDF
      </button>
       </div>
        
@@ -450,6 +455,19 @@ export  const Dashboard = () => {
     <Column field="Budget" title="Budget" cell={CustomBudgetCell}/>
   </Grid>
   </ExcelExport>
+  <GridPDFExport ref={element => {
+    _pdfExport = element;
+  }} margin="1cm">
+            {<Grid data={process(firstTeam, {
+      skip: dataState.skip,
+      take: dataState.take
+    })}>
+    <Column field="FullName" title="FullName" cell={PersonCell}/>
+    <Column field="JobTitle" title="Job Title" />
+    <Column field="Rating" title="Rating" cell={RatingCell} width="300px" />
+    <Column field="Budget" title="Budget" cell={CustomBudgetCell}/>
+        </Grid>}
+    </GridPDFExport>
   
     </div>
     </div>

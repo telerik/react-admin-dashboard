@@ -10,6 +10,12 @@ export const items = [
     selected: true,
     route: '/home/dashboard',
     icon: 'k-i-grid'
+  },
+  {
+    text: 'Performance and sales',
+    selected: false,
+    route: '/home/performance-and-sales',
+    icon: 'k-icon k-i-notification k-i-globe'
   }
 ];
 

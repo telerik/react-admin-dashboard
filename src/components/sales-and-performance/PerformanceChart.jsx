@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chart, ChartTitle, ChartLegend, ChartSeries, ChartSeriesItem, ChartCategoryAxis, ChartCategoryAxisItem, ChartValueAxis, ChartValueAxisItem } from "@progress/kendo-react-charts";
+import { Chart, ChartLegend, ChartSeries, ChartSeriesItem, ChartCategoryAxis, ChartCategoryAxisItem } from "@progress/kendo-react-charts";
 
 export const PerformanceChart = () => {
 const categories = ['Mon', 'Tu', 'Wed', 'Thru', 'Fri'];
@@ -15,6 +15,7 @@ const series = [
     color: 'purple',
   },
 ];
+
   return <Chart>
   <ChartLegend position="bottom" orientation="horizontal" />
   <ChartCategoryAxis>

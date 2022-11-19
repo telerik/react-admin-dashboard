@@ -3,7 +3,6 @@ import { TileLayout } from '@progress/kendo-react-layout';
 import { SalesRevenueChart } from '../components/sales-and-performance/SalesRevenueChart.jsx'
 import { ConversionsChart } from '../components/sales-and-performance/ConversionsChart.jsx'
 import { PerformanceChart}  from '../components/sales-and-performance/PerformanceChart.jsx'
-import { TopFiveCitiesBars } from '../components/sales-and-performance/TopFiveCitiesBars.jsx';
 import { TopFiveCitiesGlobal } from '../components/sales-and-performance/TopFiveCitiesGlobal.jsx';
 import { CostBreakdownChart } from '../components/sales-and-performance/CostBreakdownChart.jsx';
 

@@ -16,7 +16,14 @@ export const items = [
     selected: false,
     route: '/home/performance-and-sales',
     icon: 'k-icon k-i-notification k-i-globe'
-  }
+  },
+  {
+    text: 'Products',
+    selected: false,
+    route: '/home/products',
+    icon: 'k-icon k-i-aggregate-fields',
+  },
+  { separator: true },
 ];
 
 export const DrawerContainer = (props) => {

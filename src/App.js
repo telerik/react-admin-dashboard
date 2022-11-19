@@ -6,6 +6,7 @@ import { Home } from './pages/Home.jsx'
 import { Dashboard } from './pages/Dashboard.jsx'
 import { About } from './pages/About.jsx'
 import { PerformanceAndSales } from './pages/PerformanceAndSales.jsx'
+import { Products } from './pages/Products.jsx';
 
 const App = () => {
 
@@ -18,7 +19,8 @@ const App = () => {
                <Route path="/home/dashboard" element={<Dashboard/>}/>
                <Route path="/home/about" element={<About/>}/>
                <Route path="/home/performance-and-sales" element={<PerformanceAndSales/>}/>
-                </Route>
+               <Route path="/home/products" element={<Products/>}/>
+              </Route>
             </Routes>
 
         </div>

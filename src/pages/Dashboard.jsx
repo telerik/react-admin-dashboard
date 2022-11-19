@@ -21,10 +21,7 @@ import { getter } from '@progress/kendo-react-common';
 import firstTeam from '../data/firstTeam.json';
 import { Input } from '@progress/kendo-react-inputs';
 import {
-  DataResult,
   process,
-  State,
-  filterBy,
 } from '@progress/kendo-data-query';
 
 const DATA_ITEM_KEY = 'PersonID';
@@ -412,9 +409,7 @@ export  const Dashboard = () => {
     onSelectionChange={onSelectionChange}
     onHeaderSelectionChange={onHeaderSelectionChange}
   >
-  
     <GridToolbar className="toolbar">
-    
       <div>
         <span>
           <Input

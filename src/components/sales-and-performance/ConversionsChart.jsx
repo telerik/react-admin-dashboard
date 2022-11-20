@@ -31,7 +31,9 @@ export const ConversionsChart = () => {
         }}
       >
         +3.1K
+
       </h3>
+      
     );
   };
 
@@ -49,17 +51,62 @@ export const ConversionsChart = () => {
   return (
     <div>
        <div className="circular-gauge-container">
-       <CircularGauge {...arcOptions} arcCenterRender={arcCenterRenderer}  style={{height: '120px'}}
+        <div>
+        <CircularGauge {...arcOptions} arcCenterRender={arcCenterRenderer}  style={{height: '120px'}}
   scale={{
           startAngle: 250,
-        }}/>
-         <div>
-        
-       </div>
+        }}/> 
+        <div
+         style={{
+          marginLeft: '30px',
+          marginTop: '50px'
+         }}
+         >
+         <br/>
+        <h4 
+         style={{
+          fontSize: '20px',
+          color: '#666666'
+         }}
+        >Active Users</h4>
+        <br/>
+        <h3
+         style={{
+          fontSize: '20px',
+          color: '#666666'
+         }}
+         >1,500,200</h3>
+        </div>
+        </div>
+       
+       <div>
        <CircularGauge {...arcSecondOptions} arcCenterRender={secondArcCenterRenderer}  style={{height: '120px'}}
   scale={{
           startAngle: 300,
         }}/>
+         <div
+           style={{
+            marginLeft: '30px',
+            marginTop: '50px'
+           }}
+         >
+          <br/>
+        <h4
+          style={{
+            fontSize: '20px',
+            color: '#666666'
+           }}
+         >Inactive Users</h4>
+        <br/>
+        <h3
+         style={{
+          fontSize: '20px',
+          color: '#666666'
+         }}
+        >1,500,200</h3>
+        </div>
+       </div>
+
          <div>
       
          </div>

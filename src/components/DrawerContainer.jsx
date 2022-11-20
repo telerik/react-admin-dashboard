@@ -24,6 +24,12 @@ export const items = [
     icon: 'k-icon k-i-aggregate-fields',
   },
   { separator: true },
+  {
+    text: 'Settings',
+    selected: false,
+    route: '/home/account',
+    icon: 'k-icon k-i-gear'
+  },
 ];
 
 export const DrawerContainer = (props) => {

@@ -257,6 +257,8 @@ div.k-form-field:nth-child(3) {
 .overview-button {
   height: 30px;
   width: 30px;
+  color: #2D73F5;
+
 }
 
 
@@ -592,4 +594,87 @@ text-align: center;
   flex-direction: column;
   margin-left: 75px;
   margin-top: -7px;
+}
+
+.left {
+  float: left;
+   input {
+    width: 400px;
+   }
+}
+
+.right {
+  float: right;
+  input {
+    width: 400px;
+   }
+
+}
+
+.bottom-side {
+  margin-top: 90px;
+}
+
+.top-side {
+  margin-top: 820px;
+}
+
+.switch-parent, .f-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+.date-container {
+  text-align: center;
+}
+
+.weather-data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+  text-align: center;
+}
+
+.weather-data-container  {
+  margin-top: 16px;
+  padding: 8px 0px 0px;
+  gap: 18px;
+}
+
+.icon-header-container {
+  display: flex;
+  justify-content: space-between;
+    p {
+    color: #666666;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    }
+
+    a {
+      font-size: 20px;
+      color: #0058E9 !important;
+    }
+
+    .globe-span {
+      padding-right: 15px;
+      margin-top: 1px;
+    }
+}
+
+.triple-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.switch-options {
+  .switch-parent {
+    margin-top: 0px;
+    height: 10px;
+  }
 }

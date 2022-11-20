@@ -557,3 +557,39 @@ text-align: center;
   font-size: 12px;
   width: 250px;
 }
+
+
+
+.listbox-card-container {
+   margin-top: 100px;
+  .k-listview-content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .k-icon.k-i-preview {
+    z-index: 10;
+    bottom: 0px;
+    position: inherit;
+    right: -1px;
+    width: 24px;
+    height: 24px;
+    color: gray;
+  }
+  
+}
+
+.input-container {
+  text-align: center;
+   margin-top: 50px;
+   input {
+    width: 500px;
+   }
+}
+
+.footer-buttons-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+  margin-top: -7px;
+}

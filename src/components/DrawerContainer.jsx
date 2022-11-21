@@ -30,6 +30,14 @@ export const items = [
     route: '/home/account',
     icon: 'k-icon k-i-gear'
   },
+  {
+    route: '/home/billing',
+    disabled: true,
+  },
+  {
+    route: '/home/notifications',
+    disabled: true,
+  },
 ];
 
 export const DrawerContainer = (props) => {
@@ -42,15 +50,11 @@ export const DrawerContainer = (props) => {
   };
 
   const onSelect = (e) => {
-    // props.history.push(e.itemTarget.props.route);
-  console.log(e.itemTarget.props.route)
     navigate(e.itemTarget.props.route);
-    
   };
 
   const setSelectedItem = (pathName) => {
     let currentPath = items.find((item) => item.route === pathName);
-        
     if (currentPath.text) {
       return currentPath.text;
     }

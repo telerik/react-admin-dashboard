@@ -70,13 +70,12 @@ export const DrawerContainer = (props) => {
     <div>
       <div className="custom-toolbar">
         <Button icon="menu" onClick={handleClick} />
-        <span className="overview">Overview</span>
+        <span className="overview">{selected === 'Dashboard'? 'Overview' : selected}</span>
         <div className="right-widget">
           <div className="alert-container">
           <Alert/>
           </div>
           <Link to="/home/about" style={{color: '#424242', fontWeight: '400', fontSize: '14px', fontFamily: 'Roboto', marginTop: '3px'}}>About</Link>             
-
         </div>
       </div>
 

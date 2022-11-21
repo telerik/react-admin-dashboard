@@ -108,6 +108,8 @@ export const Products = () => {
 
    return <div>
       <div className="chart-container">
+        <br/>
+        <br/>
         <BubbleChart/>
       </div>
 

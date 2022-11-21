@@ -524,7 +524,7 @@ text-align: center;
 }
 
 .grid-container {
-  margin-top: 50px;
+  margin-top: 0px;
   height: 500px;
   .export-buttons-container {
     margin-left: 10px;
@@ -681,4 +681,11 @@ text-align: center;
 
 .k-disabled {
   display: none;
+}
+
+.card-buttons-parent {
+   display: flex;
+   justify-content: end;
+   margin-top: -60px;
+   margin-right: 0px;
 }

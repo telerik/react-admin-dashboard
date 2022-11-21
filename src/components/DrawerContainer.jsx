@@ -42,14 +42,17 @@ export const DrawerContainer = (props) => {
   };
 
   const onSelect = (e) => {
+    // props.history.push(e.itemTarget.props.route);
+  console.log(e.itemTarget.props.route)
     navigate(e.itemTarget.props.route);
+    
   };
 
   const setSelectedItem = (pathName) => {
     let currentPath = items.find((item) => item.route === pathName);
         
-    if (currentPath) {
-      return currentPath;
+    if (currentPath.text) {
+      return currentPath.text;
     }
   };
 

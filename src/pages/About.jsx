@@ -26,19 +26,28 @@ export const About = () => {
                   <a href="https://www.telerik.com/kendo-react-ui/components/grid/">Grid</a>
               </li>
               <li>
-                  <a href="https://www.telerik.com/kendo-react-ui/components/chart/">Charts</a>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/charts/">Charts</a>
               </li>
               <li>
-                  <a href="https://www.telerik.com/kendo-react-ui/components/tile-layout/">TileLayout</a>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/layout/tilelayout/">TileLayout</a>
               </li>
               <li>
-                  <a href="https://www.telerik.com/kendo-react-ui/components/drawer/">Drawer</a>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/layout/api/Drawer/">Drawer</a>
               </li>
               <li>
-                  <a href="https://www.telerik.com/kendo-react-ui/components/form/">Form</a>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/form/api/Form/">Form</a>
               </li>
               <li>
-                  <a href="https://www.telerik.com/kendo-react-ui/components/button/">Button</a>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/buttons/button/">Button</a>
+              </li>
+              <li>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/notification/">Notification</a>
+                  <li>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/listview/">ListView</a>
+              </li>
+              <li>
+                  <a href="https://www.telerik.com/kendo-react-ui/components/inputs/">Inputs</a>
+              </li>
               </li>
           </ul>
       </div>

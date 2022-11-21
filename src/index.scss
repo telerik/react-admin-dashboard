@@ -248,9 +248,15 @@ div.k-form-field:nth-child(3) {
 
   button {
     border-color: transparent;
-    background-color: #f5f5f5;
-    background-image: white; 
-}
+    background-color: white;
+    border: 0px;
+ }
+
+ button:hover {
+  border-color: transparent;
+  background-color: white;
+  border: 0px;
+ }
 }
 
 
@@ -352,20 +358,25 @@ div.k-form-field:nth-child(3) {
     font-size: 14px;
     margin-top: 13px;
     color: #424242;
+    font-family: 'Roboto';
+    font-weight: 700;
    }
 
    .user-email {
     font-size: 12px;
     margin-top: 12px;
     text-decoration: underline;
+    font-weight: 400;
    }
 
    .user-button {
     font-size: 12px;
+    width: 71px;
     height: 30px;
-    width: 70px;
     margin-top: 11px;
-   
+    background: rgba(66, 66, 66, 0.16);
+    border-radius: 2px;
+    margin: 12px 0 9px 0;
    }
 }
 

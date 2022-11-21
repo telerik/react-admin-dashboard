@@ -38,6 +38,10 @@ export const items = [
     route: '/home/notifications',
     disabled: true,
   },
+  {
+    route: '/home/about',
+    disabled: true,
+  },
 ];
 
 export const DrawerContainer = (props) => {
@@ -71,7 +75,7 @@ export const DrawerContainer = (props) => {
           <div className="alert-container">
           <Alert/>
           </div>
-          <Link to="/home/about" style={{color: '#424242'}}>About</Link>             
+          <Link to="/home/about" style={{color: '#424242', fontWeight: '400', fontSize: '14px', fontFamily: 'Roboto', marginTop: '3px'}}>About</Link>             
 
         </div>
       </div>
@@ -83,9 +87,8 @@ export const DrawerContainer = (props) => {
        <h1>Jaxons Danniels</h1> 
        <div className="user-email">jaxons.daniels@company.com</div> 
        <Link to="/"  style={{ textDecoration: 'none' }}>
-       <Button className="user-button" style={{
-          backgroundColor: 'white'
-       }}>Sign Out</Button> 
+       <Button className="user-button k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" 
+       >Sign Out</Button> 
        </Link>
       </div>
       <Drawer

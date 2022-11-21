@@ -12,8 +12,6 @@ import {
  } from '@progress/kendo-react-grid';
  import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
  import firstTeam  from '../../data/firstTeam.json'
- import secondTeam  from '../../data/second-team.json'
-
  import {
    process,
  } from '@progress/kendo-data-query';

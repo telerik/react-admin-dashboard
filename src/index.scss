@@ -708,3 +708,9 @@ text-align: center;
   margin-top: 35px;
   margin-bottom: 35px;
 }
+
+@media (max-width:629px) {
+  .image-wrapper {
+    display: none;
+  }
+}

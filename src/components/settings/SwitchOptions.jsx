@@ -9,7 +9,7 @@ export const SwitchOptions = () => {
    return <div>
      
       <div className="right">
-        <span>Toggle all notifications</span>
+        <span style={{marginRight: '15px'}}>Toggle all notifications</span>
        <Switch/>
         </div>
        <br/>
@@ -34,7 +34,7 @@ export const SwitchOptions = () => {
        <div className="switch-parent">
          <div>
          <p>Communication</p>
-         <p>Get news, announcements and product updates.</p>
+         <p className="gray-text">Get news, announcements and product updates.</p>
          </div>
       <Switch  />
     </div>
@@ -44,7 +44,7 @@ export const SwitchOptions = () => {
        <div className="switch-parent switch-options">
        <div>
          <p>Security</p>
-         <p>Get important notifications about your account security.</p>
+         <p className="gray-text">Get important notifications about your account security.</p>
 
          </div>
       <Switch  />
@@ -54,7 +54,7 @@ export const SwitchOptions = () => {
        <div className="switch-parent switch-options">
        <div>
          <p>Security</p>
-         <p>Get important notifications about your account security.</p>
+         <p className="gray-text">Get important notifications about your account security.</p>
 
          </div>
       <Switch  />

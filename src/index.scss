@@ -331,7 +331,6 @@ div.k-form-field:nth-child(3) {
 }
 
 .k-drawer-content {
-  // margin-left: 15px;
   margin-top: -210px;
   height: 100%;
   width: 100%;
@@ -619,7 +618,6 @@ text-align: center;
   input {
     width: 400px;
    }
-
 }
 
 .bottom-side {
@@ -673,7 +671,7 @@ text-align: center;
 
     .globe-span {
       padding-right: 15px;
-      margin-top: 1px;
+      margin-top: -4px;
     }
 }
 
@@ -699,4 +697,8 @@ text-align: center;
    justify-content: end;
    margin-top: -60px;
    margin-right: 0px;
+}
+
+.gray-text {
+  color: #8F8F8F
 }

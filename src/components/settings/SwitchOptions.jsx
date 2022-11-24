@@ -53,9 +53,9 @@ export const SwitchOptions = () => {
     <div className="mb-3" style={{marginTop: '-25px'}}>
        <div className="switch-parent switch-options">
        <div>
-         <p>Security</p>
-         <p className="gray-text">Get important notifications about your account security.</p>
-
+         <p>Meetups</p>
+         <p className="gray-text">Get an email when a Meetup is posted close to my location.
+        </p>
          </div>
       <Switch  />
     </div>

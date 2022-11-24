@@ -2,10 +2,10 @@ import * as React from 'react';
 
 export const About = () => {
    return (
-      <div id="about" className="k-d-flex-col k-justify-content-between k-align-items-start">
-
-   
-      <h2>KendoReact Admin Dashboard</h2>
+      <div className="about">
+      <h2 style={{color: 'black', fontWeight: '600'}}>KendoReact Admin Dashboard</h2>
+      <br></br>
+      <div className='body'>
       <p>
       KendoReact Admin Dashboard is a web application built with Progress award-winning
           <a href="https://www.telerik.com/kendo-react-ui"> KendoReact widgets</a> - 100+ UI components to help you
@@ -18,7 +18,12 @@ export const About = () => {
           The sample app showcases some of the most popular KendoReact for  widgets, such as Grid, TileLayout, Form,
           Charts, Gauges, etc. in a real world scenario.
       </p>
+      </div> 
+  
       <p>
+
+        <br></br>
+        <br></br>
       <div className="section-white">
           <h3 className="section-title">KendoReact widgets</h3>
           <ul className="col-xs-4">
@@ -48,6 +53,9 @@ export const About = () => {
               <li>
                   <a href="https://www.telerik.com/kendo-react-ui/components/inputs/">Inputs</a>
               </li>
+              </li>
+              <li>
+              <a href="https://www.telerik.com/kendo-react-ui/components/gauges/">Gauges</a>
               </li>
           </ul>
       </div>

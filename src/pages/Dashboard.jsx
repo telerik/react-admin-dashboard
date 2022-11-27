@@ -107,7 +107,6 @@ export  const Dashboard = () => {
 
   const handleReposition = (e) => {
     setData(e.value);
-    console.log(e.value);
   };
   
   const [data, setData] = React.useState([

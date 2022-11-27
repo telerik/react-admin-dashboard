@@ -127,7 +127,6 @@ export const Products = () => {
          if (event.target.value === "") return articles
          return post.Title.includes(event.target.value)
      })
-      console.log(results)
      setFilteredList(results)
     });
 

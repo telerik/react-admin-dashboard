@@ -91,7 +91,6 @@ export const PerformanceAndSales = () => {
    ];
    const handleReposition = (e) => {
      setData(e.value);
-     console.log(e.value);
    };
    return (
      <TileLayout

@@ -45,7 +45,6 @@ export const Account = () => {
     ];
     const handleReposition = (e) => {
       setData(e.value);
-      console.log(e.value);
     };
    return <div>
       <div>

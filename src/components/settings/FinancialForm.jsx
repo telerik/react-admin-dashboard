@@ -100,9 +100,6 @@ export const FinancialForm = () => {
       <div>
         <Label >Country</Label>
         <DropDownList
-        style={{
-          width: "300px",
-        }}
         data={countries}
         textField="text"
         dataItemKey="id"

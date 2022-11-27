@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ListView, ListViewHeader } from '@progress/kendo-react-listview';
 import { Input } from '@progress/kendo-react-inputs';
+import { Window } from '@progress/kendo-react-dialogs';
 
 import {
   Card,
@@ -15,6 +16,19 @@ import { BubbleChart } from "../components/products/BubbleChart"
 
 
  const MyItemRender = (props) => {
+  const [toggle, setToggle] = React.useState(false)
+  const [isScroll, setScroll] = React.useState(false)
+  const [isEditMode, setIsEditMode] = React.useState(false)
+  const [visible, setVisible] = React.useState(false);
+  const toggleDialog = () => {
+    setVisible(!visible);
+  };
+  const handleClick = () => {
+    setToggle(!toggle)
+    setScroll(!isScroll)
+    setIsEditMode(!isEditMode)
+  }
+
    let item = props.dataItem;
    return (
      <div
@@ -51,21 +65,35 @@ import { BubbleChart } from "../components/products/BubbleChart"
              />
              <CardTitle>{item.Title}</CardTitle>
              <CardTitle>{item.Subtitle}</CardTitle>
-             <p>
+             <p className={isScroll ? 'overflow' : ''} contentEditable={toggle}  suppressContentEditableWarning={true}>
                Some quick example text to build on the card title and make up the
                bulk of the card content.
              </p>
            </CardBody>
            <CardActions>
            <div className="footer-buttons-container">
+           {visible && <Window title={item.Title} onClose={toggleDialog} initialHeight={350} top={600} minimizeButton="false" maximizeButton="false">
+               <div>
+                <p>{item.Title}</p>
+                <CardImage
+               src={require(`../assets/article-images/${item.Image}`)}
+               style={{
+                 width: 260,
+                 height: 140,
+                 maxWidth: 260,
+               }}
+             />
+                <p>{item.Content}</p>
+               </div>
+              </Window>}
                 <span>
-                    <span className="k-button k-button-md k-button-rectangle k-rounded-md k-button-flat k-button-flat-base">
+                    <span className="k-button k-button-md k-button-rectangle k-rounded-md k-button-flat k-button-flat-base" onClick={toggleDialog}>
                         <span className="k-icon k-i-preview"></span>Review
                     </span>
                 </span>
                 <span>
-                    <span className="k-button k-edit-button k-button-md k-button-rectangle k-rounded-md k-button-flat k-button-flat-primary">
-                        <span className="k-icon k-i-edit"></span>Edit
+                    <span className="k-button k-edit-button k-button-md k-button-rectangle k-rounded-md k-button-flat k-button-flat-primary" onClick={handleClick}>
+                   <span className={ isEditMode ? 'k-icon k-i-check' : 'k-icon k-i-edit'}></span>Edit
                     </span>
                 </span>
             </div>

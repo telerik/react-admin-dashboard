@@ -709,7 +709,11 @@ text-align: center;
   margin-bottom: 35px;
 }
 
-@media (max-width:629px) {
+.overflow {
+  overflow-y: scroll;
+}
+
+@media (max-width: 800px) {
   .image-wrapper {
     display: none;
   }

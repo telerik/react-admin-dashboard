@@ -289,9 +289,13 @@ const firstTeamOnClick = React.useCallback(
        
      }
    />
-   <Column field="FullName" title="FullName" cell={PersonCell}/>
+     <Column title="Employee">
+   <Column field="FullName" title="Contact Name" cell={PersonCell}/>
+   </Column>
    <Column field="JobTitle" title="Job Title" />
+   <Column title="Employee">
    <Column field="Rating" title="Rating" cell={RatingCell} width="300px" />
+   </Column>
    <Column field="Budget" title="Budget" cell={CustomBudgetCell}/>
  </Grid>
  </ExcelExport>
@@ -302,15 +306,8 @@ const firstTeamOnClick = React.useCallback(
      skip: dataState.skip,
      take: dataState.take
    })}>
-   <Column field="FullName" title="FullName" cell={PersonCell}
-    children={[{
-     field: 'FullName',
-     title: 'FullName'
-    },
-    <Column key={2} field="FullName" title="FullName" />
-   ]}
-   >
-
+    <Column title="Employee">
+   <Column field="FullName" title="Contact Name" cell={PersonCell}/>
    </Column>
    <Column field="JobTitle" title="Job Title" />
    <Column field="Rating" title="Rating" cell={RatingCell} width="300px" />

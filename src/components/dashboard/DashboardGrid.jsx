@@ -293,7 +293,7 @@ const firstTeamOnClick = React.useCallback(
    <Column field="FullName" title="Contact Name" cell={PersonCell}/>
    </Column>
    <Column field="JobTitle" title="Job Title" />
-   <Column title="Employee">
+   <Column title="Performance">
    <Column field="Rating" title="Rating" cell={RatingCell} width="300px" />
    </Column>
    <Column field="Budget" title="Budget" cell={CustomBudgetCell}/>
@@ -310,7 +310,9 @@ const firstTeamOnClick = React.useCallback(
    <Column field="FullName" title="Contact Name" cell={PersonCell}/>
    </Column>
    <Column field="JobTitle" title="Job Title" />
+   <Column title="Performance">
    <Column field="Rating" title="Rating" cell={RatingCell} width="300px" />
+   </Column>
    <Column field="Budget" title="Budget" cell={CustomBudgetCell}/>
        </Grid>}
    </GridPDFExport>

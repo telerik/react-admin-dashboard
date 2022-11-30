@@ -4,15 +4,6 @@ span.k-textbox {
   width: 100%;
 }
 
-.k-icon.k-i-preview {
-  z-index:10;
-  position: absolute;
-  bottom: 2px;
-  right: 5px;
-  width: 24px;
-  height: 24px;
-  color:gray;
-}
 .logo-wrapper{
   height: 370px;
   width: 270px;
@@ -717,4 +708,11 @@ text-align: center;
   .image-wrapper {
     display: none;
   }
+}
+
+.password-icon {
+  position: absolute;
+  margin-left: 245px;
+  margin-top: 28px;
+  color: gray;
 }

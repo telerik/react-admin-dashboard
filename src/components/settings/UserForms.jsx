@@ -213,11 +213,11 @@ export const UserForm = () => {
         <div>
         <span>Public Profile</span>
 
-       <Switch  />
+       <Switch className="switch"/>
         </div>
 
         <div>
-        <button type={'submit'} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" disabled={!formRenderProps.allowSubmit}>
+        <button type={'submit'} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" disabled={!formRenderProps.allowSubmit} style={{marginRight: 10}}>
           Cancel
         </button>
        <button type={'submit'} className="k-selected k-button k-button-md k-button-rectangle k-rounded-md k-button-solid k-button-solid-primary k-form-submit" disabled={!formRenderProps.allowSubmit}>

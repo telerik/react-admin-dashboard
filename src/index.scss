@@ -1,8 +1,5 @@
 @import "./styles/typography.scss";
 
-// html,body{overflow: scroll; }
-
-
 span.k-textbox {
   width: 100%;
 }
@@ -346,7 +343,6 @@ div.k-form-field:nth-child(3) {
 
   box-sizing: border-box;
   outline: 0;
-  // margin-bottom: 32px;
   text-align: center;
    img {
     height: 64px;
@@ -388,6 +384,8 @@ my-app { padding: 0 !important; }
 .k-drawer-container {
     width: 100%;
     height: 100%;
+    z-index: 3000;
+    position: relative;
 }
 
 .k-drawer {
@@ -553,6 +551,14 @@ text-align: center;
 
 .progress-bar-container {
   display: flex;
+  padding-bottom: 10px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: -20px;
+  font-size: 12px;
+   span {
+    padding: 5px;
+   }
 }
 
 .value-span {

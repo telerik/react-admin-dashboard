@@ -126,7 +126,7 @@ let contacts = [
          onClick={onClick}
          ref={anchor}
        >
-         <span class="k-icon k-i-notification"></span>
+         <span className="k-icon k-i-notification"></span>
        </button>
        <Popup anchor={anchor.current} show={show} popupClass={'popup-content'}>
          <ListView

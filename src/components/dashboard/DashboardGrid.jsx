@@ -146,7 +146,7 @@ const RatingCell = (props) => {
   return (
     <td>
       <Rating
-        defaultValue={value === null ? '' : props.dataItem[field].toString()}
+        value={value === null ? '' : props.dataItem[field].toString()}
         readonly={true}
         style={{
           height: '100px',
@@ -264,16 +264,16 @@ const firstTeamOnClick = React.useCallback(
              width: '200px',
              height: '24px',
            }}
-           defaultValue={'Search in all columns'}
+           defaultValue='Search in all columns'
          />
        </span>
        <div className="export-buttons-container">
        <button title="Export to Excel" className="k-grid-excel k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={exportExcel}>
-       <span class="k-icon k-i-file-excel k-button-icon"></span> Export to Excel
+       <span className="k-icon k-i-file-excel k-button-icon"></span> Export to Excel
       </button>&nbsp;
 
      <button className="k-grid-pdf k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={exportPDF}>
-     <span class="k-icon k-i-file-pdf k-button-icon"></span>  Export to PDF
+     <span className="k-icon k-i-file-pdf k-button-icon"></span>  Export to PDF
     </button>
      </div>
       

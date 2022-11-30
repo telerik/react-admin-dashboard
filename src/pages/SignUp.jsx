@@ -85,12 +85,12 @@ maxWidth: 650
   <svg shapeRendering="geometricPrecision" textRendering="geometricPrecision" viewBox="0 0 877 455" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <linearGradient id="c" x1="-215.96" x2="-193.81" y1="3.9321" y2="481.35" gradientTransform="translate(0)" gradientUnits="userSpaceOnUse">
-<stop stop-color="#3a55da" offset="0"/>
-<stop stop-color="#282f89" offset="1"/>
+<stop stopColor="#3a55da" offset="0"/>
+<stop stopColor="#282f89" offset="1"/>
 </linearGradient>
 <linearGradient id="b" x1="193" x2="189.69" y1="110.04" y2="467.14" gradientTransform="translate(0)" gradientUnits="userSpaceOnUse">
-<stop stop-color="#5777ea" offset="0"/>
-<stop stop-color="#282f89" offset="1"/>
+<stop stopColor="#5777ea" offset="0"/>
+<stop stopColor="#282f89" offset="1"/>
 </linearGradient>
 </defs>
 <g clipPath="url(#a)">

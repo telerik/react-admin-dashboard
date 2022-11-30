@@ -9,7 +9,7 @@ export const Weather = () => {
    }}>
       <img className="cloud-image" src={require("../../assets/cloud.png")} alt="cloud"/>
    </div>
-   <div class="k-state-disabled">Partly Cloudy</div>
+   <div className="k-state-disabled">Partly Cloudy</div>
    <div style={{
       fontFamily: 'Roboto',
       fontSize: '70px',

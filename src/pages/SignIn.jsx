@@ -64,13 +64,13 @@ maxWidth: 650
          <hr /> <span>Or continue with</span><hr/>
      </div>
      <div className="social-wrapper">
-         <a href="#" className='facebook'>
+         <a href="/#" className='facebook'>
              <img src={require('../assets/facebook.png')} alt={'facebook icon'}></img>
          </a>
-         <a href="#" className='twitter'>
+         <a href="/#" className='twitter'>
              <img src={require('../assets/twitter.png')} alt={'twitter icon'}></img>
          </a>
-         <a href="#" className='reddit'>
+         <a href="/#" className='reddit'>
              <img src={require('../assets/reddit.png')} alt={'reddit icon'}></img>
          </a>
      </div>

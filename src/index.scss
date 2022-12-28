@@ -522,7 +522,7 @@ text-align: center;
 }
 
 .grid-container {
-  margin-top: 0px;
+  margin-top: 50px;
   height: 500px;
   .export-buttons-container {
     margin-left: 10px;
@@ -688,6 +688,9 @@ text-align: center;
    margin-top: -60px;
    margin-right: 0px;
 }
+ .k-button-group {
+   top: -40px;
+ }
 
 .gray-text {
   color: #8F8F8F

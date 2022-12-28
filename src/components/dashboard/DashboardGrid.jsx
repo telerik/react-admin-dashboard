@@ -148,9 +148,6 @@ const RatingCell = (props) => {
       <Rating
         value={value === null ? '' : props.dataItem[field].toString()}
         readonly={true}
-        style={{
-          height: '100px',
-        }}
       />
     </td>
   );

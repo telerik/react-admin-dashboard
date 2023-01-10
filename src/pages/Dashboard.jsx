@@ -128,6 +128,7 @@ export  const Dashboard = () => {
     {
       header: 'MK Team',
       body: <DashboardGrid/>,
+      reorderable: false
     },
   ];
 

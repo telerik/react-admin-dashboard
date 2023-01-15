@@ -8,7 +8,14 @@ export const Cards = () => {
     
    return <div>
    <div>
+   <p style={{
+      color: '#8F8F8F',
+      padding: '3px 0px 0px 0px',
+      textTransform: 'uppercase',
+      fontSize: '12px'
+     }}>Change your plan</p>
       <div className={'k-card-deck'}>
+        
         <Card
           style={{
             width: 293,
@@ -34,9 +41,10 @@ export const Cards = () => {
              }}
             >Free</CardTitle>
             <p style={{
-               marginTop: '40px',
+               marginTop: '30px',
                color: '#8F8F8F',
-               fontSize: '12px'
+               fontSize: '12px',
+               textTransform: 'uppercase'
             }}>Starter plan for individuals.</p>
           </CardBody>
         </Card>
@@ -66,8 +74,8 @@ export const Cards = () => {
             >$20/Month</CardTitle>
             <p
              style={{
-               marginTop: '40px',
-               color: '#8F8F8F',
+              marginTop: '30px',
+              color: '#8F8F8F',
                fontSize: '12px'
             }}
             >COLLABORATE UP TO 16 PEOPLE</p>
@@ -102,8 +110,8 @@ export const Cards = () => {
             >$40/Month</CardTitle>
             <p
              style={{
-               marginTop: '40px',
-               color: '#8F8F8F',
+              marginTop: '30px',
+              color: '#8F8F8F',
                fontSize: '12px'
             }}
             >FOR BIGGER BUSINESSES</p>

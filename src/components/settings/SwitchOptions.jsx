@@ -7,10 +7,17 @@ import {
 
 export const SwitchOptions = () => {
    return <div>
-     
-      <div className="right">
+    <div className="left">
+    <p style={{
+      color: '#8F8F8F',
+      padding: '30px 0px 0px 0px',
+      textTransform: 'uppercase',
+      fontSize: '12px'
+     }}>Alert</p>
+    </div>
+      <div className="right" style={{marginRight: '15px'}}>
         <span style={{marginRight: '15px'}}>Toggle all notifications</span>
-       <Switch/>
+       <Switch checked={true}/>
         </div>
        <br/>
        <br/>
@@ -21,14 +28,11 @@ export const SwitchOptions = () => {
      <FormElement
        style={{
          width: '100%',
-         height: '348px',
          background: '#fafafa',
          padding: '0px 16px 0px 16px',
          border: '1px solid rgba(0, 0, 0, 0.08)',
        }}
      >
-      <br/>
-      <br/>
       <br/>
         <div className="mb-3 switch-options">
        <div className="switch-parent">
@@ -36,9 +40,10 @@ export const SwitchOptions = () => {
          <p>Communication</p>
          <p className="gray-text">Get news, announcements and product updates.</p>
          </div>
-      <Switch  />
+      <Switch  checked={true}/>
+      
     </div>
-    
+    <br/>
     </div>
     <div className="mb-3">
        <div className="switch-parent switch-options">
@@ -57,15 +62,19 @@ export const SwitchOptions = () => {
          <p className="gray-text">Get an email when a Meetup is posted close to my location.
         </p>
          </div>
-      <Switch  />
+      <Switch  checked={true}/>
     </div>
     </div>
      </FormElement>
    )}
  />
    <br/>
-   <br/>
-   <br/>
+   <p style={{
+      color: '#8F8F8F',
+      padding: '30px 0px 0px 0px',
+      textTransform: 'uppercase',
+      fontSize: '12px'
+     }}>Emails</p>
    <Form
    render={(formRenderProps) => (
     
@@ -79,7 +88,7 @@ export const SwitchOptions = () => {
        }}
      >
       <br/>
-
+      
         <div className="mb-3 switch-options">
        <div className="switch-parent">
          <div>
@@ -103,7 +112,7 @@ export const SwitchOptions = () => {
        <div>
          <p>Reply to my group</p>
          </div>
-      <Switch  />
+      <Switch checked={true}/>
     </div>
     </div>
      </FormElement>

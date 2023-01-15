@@ -626,7 +626,13 @@ text-align: center;
 .switch-parent, .f-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 55px;
+}
+
+.billing-switch-parent {
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 .date-container {

@@ -34,6 +34,12 @@ export const FinancialForm = () => {
     };
     
   return <div>
+    <p style={{
+      color: '#8F8F8F',
+      padding: '3px 0px 0px 0px',
+      textTransform: 'uppercase',
+      fontSize: '12px'
+     }}>Payment Details</p>
      <Form
     initialValues={{
     cardHolder: 'Jaxons Danniels',
@@ -64,7 +70,7 @@ export const FinancialForm = () => {
       <div className="triple-inputs">
 
       <div style={{
-       width: '300px'
+       width: '500px'
       }}>
         <Label >Card Number</Label>
         <Field  component={Input} name={"cardNumber"} type={"text"}/>
@@ -73,7 +79,8 @@ export const FinancialForm = () => {
 
       <div 
       style={{
-         width: '300px'
+         width: '300px',
+         paddingLeft: '15px'
         }}
       >
         <Label >Expiration Date</Label>
@@ -84,7 +91,8 @@ export const FinancialForm = () => {
       </div>
       <div
        style={{
-         width: '200px'
+         width: '200px',
+         paddingLeft: '15px'
        }}
       >
         <Label >CVC</Label>
@@ -96,10 +104,11 @@ export const FinancialForm = () => {
       <div style={{
          marginTop: '50px'
       }}> 
-      <div className="left">
+      <div className="left" style={{width: '50%'}}>
       <div>
         <Label >Country</Label>
         <DropDownList
+        style={{width: '100%'}}
         data={countries}
         textField="text"
         dataItemKey="id"
@@ -109,7 +118,7 @@ export const FinancialForm = () => {
       </div>
    </div>
 
-   <div className="right">
+   <div className="right" style={{width: '50%', paddingLeft: '15px'}}>
         <div>
         <Label >ZIP/ Postal Code</Label>
         <Field  component={Input}  type={"text"}/>

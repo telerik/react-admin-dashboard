@@ -30,6 +30,8 @@ export const DashboardGrid = () => {
   const [data, setData] = React.useState([]);
   const [person, setPerson] = React.useState('Joey.png');
   const [filterValue, setFilterValue] = React.useState();
+  const [isFirstTeam, setIsFirstTeam] = React.useState(true);
+
   const [filteredSampleProducts, setFilteredSampleProducts] =
     React.useState(firstTeam);
 
@@ -50,6 +52,26 @@ export const DashboardGrid = () => {
  const [dataResult, setDataResult] = React.useState(
   process(filteredSampleProducts, dataState)
 );
+
+const firstTeamOnClick = React.useCallback(
+  () => {
+      setIsFirstTeam(true);
+      setPerson('Joey.png')
+
+  },
+  [setIsFirstTeam]
+);
+
+const secondTeamOnClick = React.useCallback(
+  () => {
+     setIsFirstTeam(!true);
+     setPerson('BaseAvatar.png')
+  },
+  [setIsFirstTeam]
+);
+
+
+
 
 const onFilterChange = (ev) => {
   let value = ev.value;
@@ -204,20 +226,25 @@ const exportPDF = () => {
       <div>
         <p style={{
           fontSize: '20px',
-          // lineHeight: '24px',
-          marginBottom: '40px',
+          marginBottom: '30px',
           color: '#000000'
         }}>  MK Team</p>
       </div>
-       <div style={{float: 'right', marginTop: '-60px'}}> 
-         <ButtonGroup>
-         <Button togglable={true}>
+       <div style={{float: 'right', marginTop: '-60px', marginRight: '10px'}}> 
+       <ButtonGroup>
+         <Button togglable={true} selected={isFirstTeam}  onClick={firstTeamOnClick} style={{
+           width: '106px',
+           height: '30px'
+         }}>
                My Team
              </Button>
-             <Button togglable={true}>
+             <Button togglable={true} selected={!isFirstTeam} onClick={secondTeamOnClick} style={{
+               width: '106px',
+               height: '30px'
+             }}>
                All Teams
              </Button>
-         </ButtonGroup>
+         </ButtonGroup> 
        </div>
         <GridToolbar className="toolbar">
      <div>
@@ -254,7 +281,6 @@ const exportPDF = () => {
         >
       <Grid
         sortable={true}
-        filterable={true}
         groupable={true}
         reorderable={true}
         pageable={{

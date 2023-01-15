@@ -47,8 +47,6 @@ import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
       chartInstance.setOptions(chartOptions, themeOptions);
     }
   }
-  
-
       return <div className="chart-container">
 
       <div className="k-card">

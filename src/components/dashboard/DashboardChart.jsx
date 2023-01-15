@@ -54,12 +54,13 @@ import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
       <div className="k-card">
        
       <div className="card-buttons">
-      <p>Total Points</p>
-         <div>
+         <div style={{display:'flex', alignItems: 'baseline'}}> 
+          <div>
+          <p style={{width: '150px'}}>Total Points</p>
+          </div>
+
          <DateRangePicker  value={range} onChange={onRangeChange}/>
-   
          </div>
-   
          <ButtonGroup>
          <Button togglable={true} selected={isTrend} onClick={trendOnClick}>
                Trend
@@ -69,6 +70,7 @@ import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
              </Button>
          </ButtonGroup>
       </div>
+      <br/>
       <Chart style={{
              height: 350
            }}  onRefresh={handleChartRefresh}>

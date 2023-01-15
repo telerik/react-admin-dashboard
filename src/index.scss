@@ -487,8 +487,9 @@ text-align: center;
   display: flex;
   justify-content: space-between;
 
-  margin-top: 20px;
+  margin-top: 30px;
   margin-right: 34px;
+  
    Button {
     width: 106px;
     height: 30px;
@@ -505,6 +506,9 @@ text-align: center;
     label {
        display: none;
     }
+}
+.action-buttons-container {
+  margin-top: 130px;
 }
 }
 
@@ -689,7 +693,7 @@ text-align: center;
    margin-right: 0px;
 }
  .k-button-group {
-   top: -40px;
+   top: 0px;
  }
 
 .gray-text {
@@ -721,4 +725,12 @@ text-align: center;
 
 .switch {
   margin-left: 20px;
+}
+
+.k-grid-toolbar {
+  border-color: transparent;
+} 
+
+.k-card-header {
+    text-align: center;
 }

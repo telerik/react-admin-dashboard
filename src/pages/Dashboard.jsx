@@ -126,7 +126,6 @@ export  const Dashboard = () => {
       body: <DashboardChart/>,
     },
     {
-      header: 'MK Team',
       body: <DashboardGrid/>,
       reorderable: false
     },

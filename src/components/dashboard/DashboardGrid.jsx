@@ -1,26 +1,22 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import {
   Grid,
   GridColumn as Column,
   getSelectedState,
-  getSelectedStateFromKeyDown,
   GRID_COL_INDEX_ATTRIBUTE,
   GridToolbar
 
 } from '@progress/kendo-react-grid';
 import { process } from '@progress/kendo-data-query';
-import { mapTree } from '@progress/kendo-react-treelist';
 import { getter } from '@progress/kendo-react-common';
-import {
-  setExpandedState,
-  setGroupIds,
-} from '@progress/kendo-react-data-tools';
 import firstTeam  from '../../data/firstTeam.json'
 import { Rating } from '@progress/kendo-react-inputs';
 import { ColumnMenu } from '../dashboard/ColumnMenu';
 import { useTableKeyboardNavigation } from '@progress/kendo-react-data-tools';
 import { Input } from '@progress/kendo-react-inputs';
+import { ExcelExport } from '@progress/kendo-react-excel-export';
+import { GridPDFExport } from '@progress/kendo-react-pdf';
+import { ButtonGroup, Button } from '@progress/kendo-react-buttons';
 
 
 const DATA_ITEM_KEY = 'orderID';
@@ -34,77 +30,66 @@ export const DashboardGrid = () => {
   const [data, setData] = React.useState([]);
   const [person, setPerson] = React.useState('Joey.png');
   const [filterValue, setFilterValue] = React.useState();
-  const [filteredPeople, setFilteredSampleProducts] =
-  React.useState(firstTeam);
+  const [filteredSampleProducts, setFilteredSampleProducts] =
+    React.useState(firstTeam);
+
+    const _export = React.useRef(null);
+
   const [dataState, setDataState] = React.useState({
    skip: 0,
-   take: 20,
+   take: 8,
    sort: [
      {
        field: 'orderDate',
        dir: 'desc',
      },
    ],
-   group: [
-     
-   ],
+   group: [],
  });
 
-  const [dataResult, setDataResult] = React.useState(
-   process(
-     firstTeam.map((dataItem) =>
-       Object.assign(
-         {
-           selected: false,
-         },
-         dataItem
-       )
-     ),
-     dataState
-   )
- );
+ const [dataResult, setDataResult] = React.useState(
+  process(filteredSampleProducts, dataState)
+);
 
+const onFilterChange = (ev) => {
+  let value = ev.value;
+  setFilterValue(ev.value);
+  let newData = firstTeam.filter((item) => {
+    let match = false;
+    for (const property in item) {
+      if (
+        item[property]
+          .toString()
+          .toLocaleLowerCase()
+          .indexOf(value.toLocaleLowerCase()) >= 0
+      ) {
+        match = true;
+      }
+      //ensure that toLocaleDateString matches with the displayed format in the Column
+      //if not, modify the logic so that you can compare same string from the cell with the input
+      if (
+        item[property].toLocaleDateString &&
+        item[property].toLocaleDateString().indexOf(value) >= 0
+      ) {
+        match = true;
+      }
+    }
+    return match;
+  });
+  setFilteredSampleProducts(newData);
+  let clearedPagerDataState = { ...dataState, take: 8, skip: 0 };
+  let processedData = process(newData, clearedPagerDataState);
+  setDataResult(processedData);
+  setDataState(clearedPagerDataState);
+};
 
-  const onFilterChange = (ev) => {
-   let value = ev.value;
-   setFilterValue(ev.value);
-   let newData = firstTeam.filter((item) => {
-     let match = false;
-     for (const property in item) {
-       if (
-         item[property]
-           .toString()
-           .toLocaleLowerCase()
-           .indexOf(value.toLocaleLowerCase()) >= 0
-       ) {
-         match = true;
-       }
- 
-       if (
-         item[property].toLocaleDateString &&
-         item[property].toLocaleDateString().indexOf(value) >= 0
-       ) {
-         match = true;
-       }
-     }
-     return match;
-   });
- 
-   filteredPeople(newData);
-   let clearedPagerDataState = { ...dataState, take: dataState.take, skip: 0 };
-   let processedData = process(newData, dataState);
-   setDataResult(processedData);
-   setDataState(clearedPagerDataState);
- };
-
- 
-  
 
   React.useEffect(() => {
     setData(firstTeam);
   }, []);
 
   const dataStateChange = (event) => {
+    setDataResult(process(filteredSampleProducts, event.dataState));
     setDataState(event.dataState);
   };
 
@@ -126,13 +111,15 @@ export const DashboardGrid = () => {
         setCollapsedGroups(collapsedGroups.filter((gr) => gr !== groupId));
       }
     }
+    setDataResult({ ...dataResult });
+
   };
 
   const onSelectionChange = (event) => {
     let targetEl = event.nativeEvent.target;
     let isDetail = false;
-    while (targetEl.tagName != 'BODY') {
-      if (targetEl.tagName == 'TR') {
+    while (targetEl.tagName !== 'BODY') {
+      if (targetEl.tagName === 'TR') {
         if (targetEl.className.indexOf('k-detail-row') >= 0) {
           isDetail = true;
           break;
@@ -153,16 +140,6 @@ export const DashboardGrid = () => {
       }));
       setData(newData);
     }
-  };
-  const handleGroupState = (props) => {
-    return {
-      data: mapTree(props.data, 'items', (group) => {
-        if (!group.aggregates) return group;
-        let groupId = group.field + '_' + group.value;
-        return { ...group, expanded: !collapsedGroups.includes(groupId) };
-      }),
-      total: props.total,
-    };
   };
 
   const RatingCell = (props) => {
@@ -209,19 +186,39 @@ export const DashboardGrid = () => {
  }];
 
  let _pdfExport;
-const exportExcel = () => {
-  _export.save();
+
+ const excelExport = () => {
+  if (_export.current !== null) {
+    _export.current.save();
+  }
 };
-let _export;
 
 const exportPDF = () => {
   _pdfExport.save();
 };
- 
+
  const CustomBudgetCell = props => <BudgetCell {...props} myProp={customData} />;
 
   return (
-    <div>
+    <div> 
+      <div>
+        <p style={{
+          fontSize: '20px',
+          // lineHeight: '24px',
+          marginBottom: '40px',
+          color: '#000000'
+        }}>  MK Team</p>
+      </div>
+       <div style={{float: 'right', marginTop: '-60px'}}> 
+         <ButtonGroup>
+         <Button togglable={true}>
+               My Team
+             </Button>
+             <Button togglable={true}>
+               All Teams
+             </Button>
+         </ButtonGroup>
+       </div>
         <GridToolbar className="toolbar">
      <div>
        <span>
@@ -231,14 +228,15 @@ const exportPDF = () => {
            style={{
              border: '2px solid #ccc',
              boxShadow: 'inset 0px 0px 0.5px 0px rgba(0,0,0,0.0.1)',
-             width: '200px',
-             height: '24px',
+             width: '150px',
+             height: '30px',
+             marginRight: '10px'
            }}
-           placeholder='Search in all columns'
+           placeholder='Search'
          />
        </span>
        <div className="export-buttons-container">
-       <button title="Export to Excel" className="k-grid-excel k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={exportExcel}>
+       <button title="Export to Excel" className="k-grid-excel k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={excelExport} style={{marginRight: '10px'}}>
        <span className="k-icon k-i-file-excel k-button-icon"></span> Export to Excel
       </button>&nbsp;
 
@@ -249,10 +247,12 @@ const exportPDF = () => {
       
      </div>
    </GridToolbar>
+   <ExcelExport
+        data={firstTeam}
+        ref={_export}
+        group={dataState.group}
+        >
       <Grid
-        style={{
-          height: '700px',
-        }}
         sortable={true}
         filterable={true}
         groupable={true}
@@ -261,7 +261,7 @@ const exportPDF = () => {
           buttonCount: 4,
           pageSizes: true,
         }}
-        data={handleGroupState(process(data, dataState))}
+        data={dataResult}
         {...dataState}
         dataItemKey={DATA_ITEM_KEY}
         selectedField={SELECTED_FIELD}
@@ -286,6 +286,46 @@ const exportPDF = () => {
     <Column field="Budget" title="Budget" cell={CustomBudgetCell} columnMenu={ColumnMenu}/> 
    </Column>
       </Grid>
+      </ExcelExport>
+      <GridPDFExport ref={element => {
+          _pdfExport = element;
+        }} margin="1cm">
+          {
+           <Grid
+           sortable={true}
+           filterable={true}
+           groupable={true}
+           reorderable={true}
+           pageable={{
+             buttonCount: 4,
+             pageSizes: true,
+           }}
+           data={dataResult}
+           {...dataState}
+           dataItemKey={DATA_ITEM_KEY}
+           selectedField={SELECTED_FIELD}
+           selectable={true}
+           onDataStateChange={dataStateChange}
+           expandField="expanded"
+           onExpandChange={expandChange}
+           onSelectionChange={onSelectionChange}
+           >
+          <Column
+          field={SELECTED_FIELD}
+          width="50px"/>
+      
+          <Column title="Employee">
+           <Column field="FullName" title="Contact Name" cell={PersonCell} columnMenu={ColumnMenu}/>
+           <Column field="JobTitle" title="Job Title" columnMenu={ColumnMenu}/>
+          </Column>
+        
+          <Column title="Performance">
+            <Column field="Rating" title="Rating" cell={RatingCell} width="300px" columnMenu={ColumnMenu}/>
+            <Column field="Budget" title="Budget" cell={CustomBudgetCell} columnMenu={ColumnMenu}/> 
+           </Column>
+              </Grid>
+           }
+       </GridPDFExport>
     </div>
   );
 };
